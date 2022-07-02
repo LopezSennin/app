@@ -32,6 +32,7 @@ import NavBarVet from './components/UserVet/NavBar/NavBar';
 import ServiceListVet from './components/UserVet/Services/ServiceList';
 import PetListVet from './components/UserVet/Pets/PetsList';
 import RecordListVet from './components/UserVet/Record/RecordList';
+import RecordListSelecVet from './components/UserVet/Record/RecordListSelect';
 import RecordFormVet from './components/UserVet/Record/RecordForm';
 
 // import components from Cashier
@@ -45,6 +46,9 @@ import OwnerFormCashier from './components/UserCashier/Owner/OwnerForm';
 import OwnerUpdateCashier from './components/UserCashier/Owner/OwnerUpdate';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const ren = <Login/>;
+
 root.render(
   <Auth0Provider 
     domain='dev-ecfa59eh.us.auth0.com'
@@ -55,15 +59,16 @@ root.render(
     <BrowserRouter>
       { 
       //<Login />
-      } 
-      <NavBarCashier />
-      {
-        //  <NavBarAdm />
+      
+      //ren
+        //  <NavBarCashier />
+        //  <NavBarAdm />  
         //  <NavBarVet />
       }
       
       <div className="container my-4">
         <Routes>
+        <Route exact path="/" element={<Home/>} />
           <Route exact path="/home" element={<Home/>} />
           <Route exact path="/adm/services" element={<ServiceListAdm />} />
           <Route exact path="/adm/services/form" element={<ServiceFormAdm />} />
@@ -77,6 +82,7 @@ root.render(
           <Route exact path="/vet/services" element={<ServiceListVet />} />
           <Route exact path="/vet/pets" element={<PetListVet />} />
           <Route exact path="/vet/record" element={<RecordListVet />} />
+          <Route exact path="/vet/record/select" element={<RecordListSelecVet />} />
           <Route exact path="vet/record/form/:id_pet" element={<RecordFormVet />} />
           <Route exact path="/cashier/services" element={<ServiceListVet />} />
           <Route exact path="/cashier/pets" element={<PetListCashier />} />

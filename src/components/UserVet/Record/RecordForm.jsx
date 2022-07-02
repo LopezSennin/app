@@ -1,8 +1,9 @@
 import {  useEffect, useState } from "react";
 import * as RecordServer from "./RecordServer";
 import { useNavigate, useParams } from "react-router-dom";
+import RecordListSelecVet from "./RecordListSelect";
 
-const RecordFormVet = () => {
+const RecordFormVet = (id_service) => {
     const navigate = useNavigate();
     const params = useParams();
     //console.log(params);
@@ -13,7 +14,7 @@ const RecordFormVet = () => {
         description : ' ',
         date : fecha.toLocaleDateString(),
         vet : ['http://localhost:8000/pet/' + params.id_pet],
-        service : [' '],
+        service : id_service,
         pet : [params.id_pet],
         state : 'activa'
     };
@@ -97,13 +98,13 @@ const RecordFormVet = () => {
                         ID Servicio
                     </label>
                 
-                    <input type="text" name="service" value={record.service} onChange={handleInputChange} className="form-control"  required disabled="" readonly=""/>
+                    <input type="text" name="service" value={id_service} onChange={handleInputChange} className="form-control"  required disabled="" readonly=""/>
                     
                     <div className='text-center'>
                         <br/>
-                        <button type="submit" className="btn btn-block btn-primary ">
+                        <a href="/vet/record/select" className="btn btn-block btn-primary ">
                             Selecionar servicio
-                        </button>
+                        </a >
                     </div>
                 
                 </div>
@@ -111,7 +112,7 @@ const RecordFormVet = () => {
 
                 <div className="d-grid gap-2">
                     <button type="submit" className="btn btn-block btn-primary">
-                        Actualizar 
+                        Registrar 
                     </button>
                 </div>
             </form>

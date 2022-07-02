@@ -1,11 +1,18 @@
 import{LoginButton} from './LoginButton';
-import logo from './logo.svg';
+import { LogoutButton } from './Logout';
+import logo from './logo.png';
+import './Login.css';
+
 
 function Login() {
     return (
         <div className='Login'>
-            <img src={logo}  height='500'/>
-            <LoginButton />
+            <header className='Login-header'>
+                <img src={logo}  className="Login-logo" alt="logo"/>
+                <LoginButton />
+                <LogoutButton />
+            </header>
+            
         </div>
     );
 }

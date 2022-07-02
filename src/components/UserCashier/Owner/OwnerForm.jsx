@@ -49,7 +49,7 @@ const OwnerFormCashier = () => {
                         Nombres 
                     </label>
 
-                    <input type="text" name="first_name" value={owner.first_name} onChange={handleInputChange} className="form-control" required />
+                    <input type="text" name="first_name" value={owner.first_name} onChange={handleInputChange} className="form-control" minLength="2" required />
                 </div>
 
                 <div className="mb-3">
@@ -57,7 +57,7 @@ const OwnerFormCashier = () => {
                         Apellidos
                     </label>
 
-                    <input type="text" name="last_name" value={owner.last_name} onChange={handleInputChange} className="form-control"  required />
+                    <input type="text" name="last_name" value={owner.last_name} onChange={handleInputChange} className="form-control" minLength="2" required />
                 </div>
 
                 <div className="mb-3">
@@ -65,7 +65,7 @@ const OwnerFormCashier = () => {
                         Dirección
                     </label>
 
-                    <input type="text" name="address" value={owner.address} onChange={handleInputChange} className="form-control"  required />
+                    <input type="text" name="address" value={owner.address} onChange={handleInputChange} className="form-control" minLength="2" required />
                 </div>
 
                 <div className="mb-3">
@@ -81,7 +81,7 @@ const OwnerFormCashier = () => {
                         Email
                     </label>
 
-                    <input type="text" name="email" value={owner.email} onChange={handleInputChange} className="form-control"  required />
+                    <input type="email" name="email" value={owner.email} onChange={handleInputChange} className="form-control" minLength="2" required />
                 </div>
 
                 <div className="d-grid gap-2">
